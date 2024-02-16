@@ -2001,7 +2001,7 @@ textarea::placeholder {
     width: 300px;
   }
   .copy-privacy {
-    height: 100px;
+    height: 150px !important;
     width: 300px;
     display: flex;
     flex-direction: column;
