@@ -71,15 +71,15 @@ a {
 }
 .nav-link:hover {
   color: aquamarine;
-  font-size: 1rem;
-  animation: ef 5 ease;
+  /* font-size: 1rem; */
+  animation: ef 1s ease-in-out;
 }
 @keyframes ef {
   from {
     font-size: 2rem;
   }
   to {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -276,6 +276,7 @@ video {
   font-weight: 500;
   background-color: transparent;
   color: #ffff;
+  z-index: -1;
 }
 
 .btn:focus {
@@ -343,6 +344,7 @@ video {
   width: 40px;
   position: absolute;
   left: 10px;
+  z-index: -1;
 }
 .scroll_icon {
   width: 100%;
@@ -1305,19 +1307,34 @@ label:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  /* transition: left 0.8s ease; */
   background: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(30px);
 }
 
 /* Modal Content/Box */
 .modal-content {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+  animation: slideInRight 0.8s forwards;
+  /* overflow: hidden; */
+  /* transition: 0.8s; */
+
 }
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .close {
   color: #ffff;
   padding: 10px;
@@ -1346,11 +1363,10 @@ label:hover {
   width: 500px;
   background-color: transparent;
 }
-.input_field,
-textarea {
+.input_field, textarea {
   outline: 0;
-  border-width: 0 0 2px;
-  border-color: #cfedc1;
+  border-width: 0 0 4px;
+  border-color: #fff;
 }
 #txtArea_oo {
   width: 80%;
@@ -1361,16 +1377,18 @@ textarea {
   background-color: transparent;
 }
 .req {
-  color: #1b398f;
+  color: #ffff;
+  font-weight: lighter;
 }
 .lets_create {
-  color: #04298d;
+  color: #fff;
   font-size: 30px;
 }
 .input_field::placeholder,
 textarea::placeholder {
-  color: #f9fcf995;
+  color: #ffff;
   opacity: 1;
+  font-size: 20px;
 }
 .input_field {
   width: 80%;
@@ -1397,7 +1415,7 @@ textarea::placeholder {
 
 .icon {
   padding: 10px;
-  color: #c7eec1;
+  color: #fff;
   min-width: 50px;
   text-align: center;
 }
@@ -1405,9 +1423,9 @@ textarea::placeholder {
   width: 80%;
   padding: 15px;
   font-size: 16px;
-  color: #b3ed58;
+  color: #fff;
   background-color: transparent;
-  border: aqua 1px solid;
+  border: #FFF 3px solid;
 }
 @media only screen and (max-width: 500px) {
   .input_field {
@@ -1612,7 +1630,7 @@ textarea::placeholder {
   background-color: transparent;
   color: #ffff;
   margin-top: 100px;
-  margin : 10px;
+  margin: 10px;
 }
 .pills_awards,
 .pills_recognition {
@@ -1945,9 +1963,6 @@ textarea::placeholder {
     height: 120px;
     width: auto;
   }
-  .Footer_container {
-    /* height: 100vh; */
-  }
   .para_content {
     height: 300px;
     width: 750px;
@@ -1965,11 +1980,8 @@ textarea::placeholder {
     width: 500px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
   }
-  .Footer_container {
-    /* height: 190vh !important; */
-  }
+  
 
   .offices-grid .city-abbreviation {
     font-size: 3rem;
@@ -1994,9 +2006,6 @@ textarea::placeholder {
     width: 100px;
     height: 1px;
   }
-  .Footer_container {
-    /* height: 190vh !important; */
-  }
   #formContent {
     height: 350px;
     width: 300px;
@@ -2008,11 +2017,7 @@ textarea::placeholder {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 1080px) {
-  .Footer_container {
-    /* height: 140vh; */
-  }
-}
+
 .copyright,
 .privacy-button {
   margin: 10px;
@@ -2023,3 +2028,6 @@ textarea::placeholder {
   display: flex;
 }
 /* /\\///\/\\/\/\/\/\/\/\\\\\\\Footer ends\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+.modal-open {
+  overflow: hidden;
+}
