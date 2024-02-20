@@ -2072,13 +2072,16 @@
 
       btn.onclick = function () {
         modal.style.display = "block";
-      };
+         document.body.classList.add('modal-open');
+     };
 
       span.onclick = function () {
         modal.style.display = "none";
+        document.body.classList.remove('modal-open');
       };
       span2.onclick = function () {
         modal.style.display = "none";
+        document.body.classList.remove('modal-open');
       };
 
       modal.onclick = function (event) {
